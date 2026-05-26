@@ -2,7 +2,7 @@
 
 services:
   docklet:
-    image: ghcr.io/YOUR_GH_USERNAME/docklet:latest
+    image: drevoliv/docklet:latest
     container_name: docklet
     restart: unless-stopped
     ports:

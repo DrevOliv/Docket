@@ -8,7 +8,7 @@
 # Current version lives in ./VERSION. Bump major/minor by editing it by hand.
 # ───────────────────────────────────────────────────────────────────────────────
 
-REGISTRY  ?= drevoliv/docket
+REGISTRY  ?= drevoliv
 IMAGE     ?= docklet
 PLATFORMS ?= linux/amd64,linux/arm64
 

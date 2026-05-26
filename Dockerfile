@@ -1,4 +1,3 @@
-n
 # ─── Stage 1: build the React frontend ────────────────────────────────────────
 FROM node:22-alpine AS frontend
 WORKDIR /app
@@ -12,6 +11,7 @@ RUN npm run build
 # We don't need the full Docker CLI — just `docker-compose`. It's a single static
 # binary published on GitHub releases. ~60MB instead of ~250MB for docker-ce-cli.
 FROM alpine:3.20 AS compose
+ARG TARGETARCH
 ARG COMPOSE_VERSION=v2.32.1
 RUN apk add --no-cache curl \
  && case "$TARGETARCH" in \

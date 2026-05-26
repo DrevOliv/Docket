@@ -2,49 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d22370a-0f2f-47cb-8d42-0f427edaa8b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Docklet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docklet-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/discovery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/docker_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.example.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/docklet-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ActionButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ContainerRow.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LogsPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/MetricBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/StackCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/StatePill.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useLiveStats.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/lib/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/lib/format.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/StackDetail.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/VERSION" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1779818936578</updated>
-      <workItem from="1779818937587" duration="4721000" />
+      <workItem from="1779818937587" duration="5347000" />
     </task>
     <servers />
   </component>
