@@ -1,0 +1,16 @@
+# Copy to docker-compose.yml, set STACKS_DIR in .env, then `docker compose up -d`.
+
+services:
+  docklet:
+    image: ghcr.io/YOUR_GH_USERNAME/docklet:latest
+    container_name: docklet
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    environment:
+      DOCKLET_STACKS_DIR: ${STACKS_DIR}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Same path on both sides — your stacks' bind mounts (./data, etc.)
+      # are resolved by the host daemon, not inside this container.
+      - ${STACKS_DIR}:${STACKS_DIR}

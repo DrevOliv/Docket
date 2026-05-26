@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(94,234,212,0.06), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(94,234,212,0.05), transparent 60%),
+      #0b0f17;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+  ::selection { background: rgba(94, 234, 212, 0.25); }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-line rounded-2xl shadow-card;
+  }
+  .card-hover {
+    @apply transition-colors hover:bg-surface-hover hover:border-accent/40;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium
+           border border-line bg-ink-soft hover:bg-surface-hover hover:border-accent/40
+           transition-all active:scale-[.98];
+  }
+  .btn-primary {
+    @apply btn bg-accent/15 border-accent/40 text-accent hover:bg-accent/25;
+  }
+  .btn-danger {
+    @apply btn hover:border-bad/50 hover:text-bad;
+  }
+}
+
+/* Custom thin scrollbars to match the theme. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3346 transparent;
+}

@@ -1,0 +1,24 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / Vite
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Editor
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Local config
+.env
+.env.local
+backend/data/
