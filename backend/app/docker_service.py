@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from typing import Iterable
 
@@ -61,6 +62,9 @@ class StackRuntime:
 class DockerService:
     def __init__(self) -> None:
         self._client: docker.DockerClient | None = None
+        self._host_mem_total: int = 0
+        # docker-py is synchronous; one shared pool keeps stats fan-out cheap.
+        self._stats_pool = ThreadPoolExecutor(max_workers=16, thread_name_prefix="docker-stats")
 
     # ---- lifecycle -------------------------------------------------------
 
@@ -72,7 +76,9 @@ class DockerService:
                 else docker.from_env()
             )
             self._client.ping()
-            log.info("Connected to Docker daemon")
+            info = self._client.info()
+            self._host_mem_total = int(info.get("MemTotal", 0))
+            log.info("Connected to Docker daemon (host memory: %d bytes)", self._host_mem_total)
         except DockerException as e:
             log.warning("Could not connect to Docker daemon: %s", e)
             self._client = None
@@ -107,17 +113,21 @@ class DockerService:
 
         cpu = 0.0
         mem = 0
-        mem_limit = 0
+        # Memory limit at the stack level = host RAM. We don't sum per-container
+        # `memory_stats.limit` because unbounded containers all report host total
+        # — summing 4 of them on a 9 GB host yields a bogus 36 GB.
+        mem_limit = self._host_mem_total
         if with_stats:
-            for c in containers:
-                if c.status != "running":
-                    continue
-                stats = _safe_stats(c)
-                if stats is None:
-                    continue
-                cpu += _calc_cpu_percent(stats)
-                mem += _read_int(stats, "memory_stats", "usage")
-                mem_limit += _read_int(stats, "memory_stats", "limit")
+            running = [c for c in containers if c.status == "running"]
+            if running:
+                # Fan stats calls out in parallel — each call blocks ~1-2 s on
+                # the daemon while it computes the sample, so serial fetching
+                # makes the first WS tick crawl on stacks with many services.
+                for stats in self._stats_pool.map(_safe_stats, running):
+                    if stats is None:
+                        continue
+                    cpu += _calc_cpu_percent(stats)
+                    mem += _read_int(stats, "memory_stats", "usage")
 
         return StackRuntime(infos, cpu, mem, mem_limit)
 

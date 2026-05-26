@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9d22370a-0f2f-47cb-8d42-0f427edaa8b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/VERSION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/discovery.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/discovery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/docker_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/docker_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LogsPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LogsPanel.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +35,16 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/oliver/Documents/Dev/Docklet/frontend/public",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/public" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -51,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1779818936578</updated>
-      <workItem from="1779818937587" duration="5347000" />
+      <workItem from="1779818937587" duration="7263000" />
     </task>
     <servers />
   </component>

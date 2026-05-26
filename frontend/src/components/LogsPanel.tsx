@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { RefreshCw, ScrollText } from "lucide-react";
@@ -16,6 +17,16 @@ export default function LogsPanel({ stackName, tail = 200 }: Props) {
     refetchInterval: 5_000,
   });
 
+  const preRef = useRef<HTMLPreElement>(null);
+
+  // Scroll to bottom whenever new log content arrives — `--tail` already
+  // limits server-side, this just shows the freshest lines without the user
+  // having to scroll down manually every refresh.
+  useEffect(() => {
+    const el = preRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [data?.logs]);
+
   return (
     <motion.div layout className="card">
       <div className="flex items-center justify-between px-4 py-3 border-b border-line/60">
@@ -29,7 +40,10 @@ export default function LogsPanel({ stackName, tail = 200 }: Props) {
           Refresh
         </button>
       </div>
-      <pre className="text-[12px] leading-relaxed font-mono p-4 max-h-[420px] overflow-auto whitespace-pre-wrap">
+      <pre
+        ref={preRef}
+        className="text-[12px] leading-relaxed font-mono p-4 max-h-[420px] overflow-auto whitespace-pre-wrap"
+      >
         {data?.logs?.trim() || (isFetching ? "Loading…" : "No logs yet.")}
       </pre>
     </motion.div>

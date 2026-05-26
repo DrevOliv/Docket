@@ -43,9 +43,20 @@ if settings.frontend_dist.exists():
     if assets_dir.exists():
         app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
 
+    _dist_root = settings.frontend_dist.resolve()
+    _index_html = _dist_root / "index.html"
+
     @app.get("/{full_path:path}")
     def spa_fallback(full_path: str):
-        # Anything that didn't match an API route → serve index.html so the
-        # React router can take over.
-        index = settings.frontend_dist / "index.html"
-        return FileResponse(index)
+        # Vite copies everything under frontend/public/ into dist/ at the root
+        # (favicon, logo PNGs, etc). If the request maps to a real file there,
+        # serve it; otherwise fall back to index.html so the React router can
+        # take over the client-side route.
+        if full_path:
+            candidate = (_dist_root / full_path).resolve()
+            if (
+                candidate.is_file()
+                and candidate.is_relative_to(_dist_root)  # block ../ traversal
+            ):
+                return FileResponse(candidate)
+        return FileResponse(_index_html)

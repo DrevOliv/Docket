@@ -27,7 +27,7 @@ function Header() {
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-3">
         <Link to="/" className="flex items-center gap-2 group">
           <img
-            src="/docklet-logo.png"
+            src="/docklet-icon.png"
             alt="Docklet"
             className="w-9 h-9 rounded-lg border border-line/60 bg-white object-cover group-hover:shadow-glow transition-shadow"
           />
